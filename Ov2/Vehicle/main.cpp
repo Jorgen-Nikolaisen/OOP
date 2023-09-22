@@ -1,9 +1,16 @@
 #include <iostream> 
-
+#include "Vehicle.cpp"
 using namespace std; 
 
 
 int main(){
+    Vehicle tester('M', 'D', "DE2000" );
+    string reg = "EK1244";
+    for(char c : reg.substr(2, reg.size())){
+        if(c < '0' || c > '9'){
+            cout << c << endl;
+        }
+    }
 
     return 0; 
 }
@@ -41,8 +48,8 @@ getFuelType() - returnerer type drivstoff som følgende: 'H' for hydrogen, 'E' f
 
 getRegistrationNumber() - returnerer registreringsnummeret
 
-setRegistrationNumber(String) - endrer registreringsnummeret dersom det er gyldig i henhold til kravene over, 
-og utløser unntak av typen IllegalArgumentException dersom det ikke er gyldig.
+setRegistrationNumber(String) - endrer registreringsnummeret dersom det er gyldig i henhold til 
+kravene over, og utløser unntak av typen IllegalArgumentException dersom det ikke er gyldig.
 
 getVehicleType() - returnerer kjøretøystype: 'M' for motosykkel, 'C' for bil.
 
